@@ -48,7 +48,7 @@ const CharacterDetails = () => {
 		<div className="lex flex-wrap md:flex-nowrap justify-center p-[20px] w-full h-[calc(100vh-100px)]">
 			<h1 className="text-primary font-bold">Characters Details</h1>
 			<Card className="flex flex-col text-center gap-[20px] mt-[20px] p-[20px]">
-				<h1 className="w-full text-black text-center font-bold">{character?.fullName}</h1>
+				<h1 className="w-full text-black text-center font-bold text-[24px]">{character?.fullName}</h1>
 				<img className="mb-[20px] mx-auto sm:w-[400px] sm:h-[400px]" src={character?.imageUrl} alt={character?.fullName} />
 				<h3 className="font-bold">First Name: <span className="font-medium">{character?.firstName}</span></h3>
 				<h3 className="font-bold">Last Name: <span className="font-medium">{character?.lastName}</span></h3>
