@@ -17,7 +17,7 @@ const Home = () => {
 		try{
 			let characters = []
 			if (nameQuery === '')
-			 	characters = await getAllCharacters();
+				characters = await getAllCharacters();
 			else
 				characters = await getCharactersByName(nameQuery);
 			setSearchedCharacters(characters);
@@ -40,7 +40,7 @@ const Home = () => {
 
 	const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
 		if(event.key === 'Enter'){
-		   handleSearch();
+			handleSearch();
 		}
 	}
 
@@ -72,7 +72,7 @@ const Home = () => {
 				</Card>
 			</div>
 		</div>
-	  )
+	)
 }
 
 export default Home

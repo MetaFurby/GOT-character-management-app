@@ -3,10 +3,10 @@ import { Character } from '../models';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
 type Store = {
-  	characters: Character[];
-  	addCharacter: (character: Character) => void;
-  	removeCharacter: (id: number) => void;
-  	updateCharacter: (character: Character) => void;
+	characters: Character[];
+	addCharacter: (character: Character) => void;
+	removeCharacter: (id: number) => void;
+	updateCharacter: (character: Character) => void;
 	getCharacter: (id: number) => Character | undefined;
 };
 
