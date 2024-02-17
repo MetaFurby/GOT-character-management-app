@@ -50,9 +50,11 @@ const CharacterDetails = () => {
 			<Card className="flex flex-col text-center gap-[20px] mt-[20px] p-[20px]">
 				<h1 className="w-full text-black text-center font-bold">{character?.fullName}</h1>
 				<img className="mb-[20px] mx-auto sm:w-[400px] sm:h-[400px]" src={character?.imageUrl} alt={character?.fullName} />
+				<h3 className="font-bold">First Name: <span className="font-medium">{character?.firstName}</span></h3>
+				<h3 className="font-bold">Last Name: <span className="font-medium">{character?.lastName}</span></h3>
 				<h3 className="font-bold">Family: <span className="font-medium">{character?.family}</span></h3>
 				<h3 className="font-bold">Title: <span className="font-medium">{character?.title}</span></h3>
-				<h3 className="font-bold">Is in my list: <span className="font-medium">{isListed? 'yes' : 'no'}</span></h3>
+				<h3 className="font-bold">Added to my list: <span className="font-medium">{isListed? 'yes' : 'no'}</span></h3>
 			</Card>
 		</div>
 	)

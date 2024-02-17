@@ -23,6 +23,7 @@ const Home = () => {
 			setSearchedCharacters(characters);
 			if (characters.length === 0) {
 				showToast({
+					title: "Warning",
 					message: "No characters match the search",
 					type: "warning",
 				})

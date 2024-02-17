@@ -11,6 +11,7 @@ type ToastParameters = {
 const getTitleColor = (type: TypeOptions) => {
 	let result = "black";
 	if (type === "error") result = "red";
+	else if (type === "warning") result = "#FFDB58"
 	else if (type !== "default") result = "green";
 
 	return result;
