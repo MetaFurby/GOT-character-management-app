@@ -14,7 +14,7 @@ function Layout() {
 	 */
 	useEffect(() => {
 		Navigation.init(navigate);
-	}, []);
+	}, [navigate]);
 	return (
 		<>
 			<Header />

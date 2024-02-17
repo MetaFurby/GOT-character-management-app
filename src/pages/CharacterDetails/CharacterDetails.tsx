@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useCharacters from "../../stores/useCharacters";
 import { Card, LoadingScreen } from "../../components";
 import { getCharacterById } from "../../services/character.service";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Character } from "../../models";
 
 const CharacterDetails = () => {
@@ -12,14 +12,8 @@ const CharacterDetails = () => {
 	const [loading, setLoading] = useState(true);
 	const [isListed, setIsListed] = useState(false);
 
-	//Due to strict mode, useEffect is called twice in dev mode
-	useEffect(() => {
-		if (id != null) {
-			fetchCharacter(Number(id));
-		}
-	}, [id])
-
-	const fetchCharacter = async (id: number) => {
+	//useCallback to avoid extra render when adding it as a useEffect dependency
+	const fetchCharacter = useCallback(async (id: number) => {
 		setLoading(true);
 		let auxCharacter = getCharacter(Number(id));
 		if (!auxCharacter) {
@@ -34,7 +28,14 @@ const CharacterDetails = () => {
 			setLoading(false);
 		}
 		setCharacter(auxCharacter);
-	}
+	}, [getCharacter]);
+
+	//Due to strict mode, useEffect is called twice in dev mode
+	useEffect(() => {
+		if (id != null) {
+			fetchCharacter(Number(id));
+		}
+	}, [id, fetchCharacter])
 	
 	if (character == null && !loading) return (
 		<>
