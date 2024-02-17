@@ -48,11 +48,11 @@ export default function showToast(toastParameters: ToastParameters) {
 			{message}
 		</p>
 	</>, {
-		...toastOptions,
 		autoClose: 1500,
 		pauseOnHover: true,
 		closeOnClick: true,
 		theme: "light",
 		type,
+		...toastOptions,
 	});
 }
