@@ -15,5 +15,5 @@ export const getCharacterById = (id: number) => {
 
 //The API doesn't support query params using the firstName or lastName, therefore the filtering is made at the response level
 export const getCharactersByName = (name: string) => {
-	return axios.get<Character[]>(characterUrl).then((response) => response.data.filter(item => item.fullName.toLowerCase().includes(name)));
+	return axios.get<Character[]>(characterUrl).then((response) => response.data.filter(item => item.fullName.toLowerCase().includes(name.toLowerCase())));
 };
